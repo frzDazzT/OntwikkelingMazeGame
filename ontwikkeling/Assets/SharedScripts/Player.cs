@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
     Rigidbody rb;
     public float moveSpeed = 4;
     public float jumpForce = 3;
     Vector3 moveDir;
     bool canJump = true;
+
+    public bool level1Key, level2Key, level3Key;
 
     private void Start()
     {

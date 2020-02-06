@@ -14,18 +14,15 @@ public class Pickup : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Key>())
         {
-            if (collision.gameObject.GetComponent<Key>().normalKey)
-            {
-                //add key to key inventory
-                Debug.Log("key added");
-                //destroy key
-            }
-
             if (collision.gameObject.GetComponent<Key>().fakeKey)
             {
                 //take off 20 seconds or something
                 Debug.Log("time taken off");
                 //destroy key
+            }
+            else
+            {
+                Debug.Log("key added");
             }
         }
     }

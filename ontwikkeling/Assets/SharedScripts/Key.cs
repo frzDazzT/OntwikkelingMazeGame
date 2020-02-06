@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Key : Pickup
 {
-    public bool normalKey, fakeKey;
+    public bool fakeKey;
 }
