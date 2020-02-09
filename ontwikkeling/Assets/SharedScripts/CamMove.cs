@@ -18,7 +18,7 @@ public class CamMove : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         currentX -= Input.GetAxis("Mouse Y") * sens;
         currentY += Input.GetAxis("Mouse X") * sens;
