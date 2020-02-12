@@ -20,13 +20,16 @@ public class CamMove : MonoBehaviour
     }
     private void LateUpdate()
     {
-        currentX -= Input.GetAxis("Mouse Y") * sens;
-        currentY += Input.GetAxis("Mouse X") * sens;
+        if (!player.GetComponent<Player>().isPaused)
+        {
+            currentX -= Input.GetAxis("Mouse Y") * sens;
+            currentY += Input.GetAxis("Mouse X") * sens;
 
-        currentX = Mathf.Clamp(currentX, minY, maxY);
-        Quaternion rot = Quaternion.Euler(currentX, currentY, 0);
-        Quaternion rotPlayer = Quaternion.Euler(0, currentY, 0);
-        Camera.main.transform.rotation = rot;
-        player.transform.localRotation = rotPlayer;
+            currentX = Mathf.Clamp(currentX, minY, maxY);
+            Quaternion rot = Quaternion.Euler(currentX, currentY, 0);
+            Quaternion rotPlayer = Quaternion.Euler(0, currentY, 0);
+            Camera.main.transform.rotation = rot;
+            player.transform.localRotation = rotPlayer;
+        }     
     }
 }
