@@ -15,8 +15,6 @@ public class Player : MonoBehaviour
 
     public GameObject pauseMenu;
 
-    public bool level1Key, level2Key, level3Key;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,7 +45,8 @@ public class Player : MonoBehaviour
         {
             canJump = false;
             rb.velocity = new Vector3(0, jumpForce, 0);
-            rb.AddForce(transform.forward * 50f);
+            float extraJumpForce = 400f;
+            rb.AddForce(transform.forward * extraJumpForce, ForceMode.Force);
         }
     }
 
@@ -74,13 +73,18 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButtonDown("Cancel") && isPaused)
             {
-                pauseMenu.SetActive(false);
-                isPaused = false;
-                //continue timer and time & disable mouse
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.Locked;               
-                Time.timeScale = 1f;
+                UnPause();
             }             
         }
+    }
+
+    public void UnPause()
+    {
+        pauseMenu.SetActive(false);
+        isPaused = false;
+        //continue timer and time & disable mouse
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
 }
