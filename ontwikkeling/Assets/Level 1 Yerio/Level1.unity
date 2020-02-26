@@ -2969,24 +2969,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab248aed832ec640b7fd3d0a156832a, type: 3}
---- !u!224 &357039449 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9155148096066213365, guid: dab248aed832ec640b7fd3d0a156832a,
-    type: 3}
-  m_PrefabInstance: {fileID: 357039448}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &357039450 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9155148096066213364, guid: dab248aed832ec640b7fd3d0a156832a,
-    type: 3}
-  m_PrefabInstance: {fileID: 357039448}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &361569355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5768,6 +5750,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7283198063833161448, guid: c8c978f2b6db05842981db6c4054bc80,
     type: 3}
   m_PrefabInstance: {fileID: 590072797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &605380498 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5625455046691267530, guid: dab248aed832ec640b7fd3d0a156832a,
+    type: 3}
+  m_PrefabInstance: {fileID: 357039448}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &608716254
 PrefabInstance:
@@ -18158,7 +18146,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 357039449}
+  - {fileID: 605380498}
   m_Father: {fileID: 837178311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19677,7 +19665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efb966cbcb2a9943b9369408318c7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 357039450}
+  timerText: {fileID: 5625455046691267529, guid: dab248aed832ec640b7fd3d0a156832a,
+    type: 3}
   secondsCount: 0
   minuteCount: 0
 --- !u!1001 &8569983080260260857

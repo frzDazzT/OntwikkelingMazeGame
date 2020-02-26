@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5959050928195122629}
   - component: {fileID: 1362543863}
   - component: {fileID: 8804828800537315036}
+  - component: {fileID: -4354520326817244437}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -142,9 +143,22 @@ MonoBehaviour:
   jumpForce: 3
   isPaused: 0
   pauseMenu: {fileID: 0}
-  level1Key: 0
-  level2Key: 0
-  level3Key: 0
+--- !u!114 &-4354520326817244437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959050928195122628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efb966cbcb2a9943b9369408318c7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 5625455046691267529, guid: dab248aed832ec640b7fd3d0a156832a,
+    type: 3}
+  secondsCount: 0
+  minuteCount: 0
 --- !u!1 &5959050928666846545
 GameObject:
   m_ObjectHideFlags: 0
