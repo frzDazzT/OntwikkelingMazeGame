@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public bool isPaused = false;
 
     public GameObject pauseMenu;
+    public GameObject dialogCanvas;
+    public GameObject dialogManager;
 
     private void Start()
     {
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
         // rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.fixedDeltaTime) +
         //     (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime));
 
-        if (!isPaused)
+        if (!isPaused && !dialogManager.GetComponent<DialogManager>().isDialogOpen)
         {
             moveDir.x = Input.GetAxis("Horizontal");
             moveDir.z = Input.GetAxis("Vertical");
@@ -41,7 +43,7 @@ public class Player : MonoBehaviour
         Pause();
 
         //jump
-        if (Input.GetButtonDown("Jump") && canJump)
+        if (Input.GetButtonDown("Jump") && canJump && !dialogManager.GetComponent<DialogManager>().isDialogOpen)
         {
             canJump = false;
             rb.velocity = new Vector3(0, jumpForce, 0);
@@ -63,6 +65,8 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Cancel") && !isPaused)
         {
             pauseMenu.SetActive(true);
+            dialogCanvas.SetActive(false);
+            dialogManager.GetComponent<DialogManager>().isDialogOpen = false;
             isPaused = true;
             //stop timer and stop time & show mouse
             Cursor.visible = true;

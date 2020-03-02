@@ -11,7 +11,8 @@ public class KeySpawning : MonoBehaviour
         for (int i = 0; i < keys.Count; i++)
         {
             int index = Random.Range(0, keySpawningPositions.Count);
-            Instantiate(keys[i], keySpawningPositions[index].transform.position, keys[i].transform.rotation);
+            GameObject key = Instantiate(keys[i], keySpawningPositions[index].transform.position, keys[i].transform.rotation);
+            key.SetActive(true);
         }
     }
 }

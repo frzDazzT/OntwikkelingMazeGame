@@ -20,7 +20,7 @@ public class CamMove : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (!player.GetComponent<Player>().isPaused)
+        if (!player.GetComponent<Player>().isPaused && !player.GetComponent<Player>().dialogManager.GetComponent<DialogManager>().isDialogOpen)
         {
             currentX -= Input.GetAxis("Mouse Y") * sens;
             currentY += Input.GetAxis("Mouse X") * sens;
