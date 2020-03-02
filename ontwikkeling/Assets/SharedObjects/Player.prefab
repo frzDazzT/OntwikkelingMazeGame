@@ -142,9 +142,6 @@ MonoBehaviour:
   jumpForce: 3
   isPaused: 0
   pauseMenu: {fileID: 0}
-  level1Key: 0
-  level2Key: 0
-  level3Key: 0
 --- !u!1 &5959050928666846545
 GameObject:
   m_ObjectHideFlags: 0
