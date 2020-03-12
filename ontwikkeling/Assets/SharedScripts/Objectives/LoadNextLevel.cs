@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadNextLevel : MonoBehaviour
 {
     public float detectionRange;
     public GameObject manager;
+    public Text actionText;
     private void Update()
     {
         Collider[] coll = Physics.OverlapSphere(transform.position, detectionRange);
@@ -25,7 +27,10 @@ public class LoadNextLevel : MonoBehaviour
                 else
                 {
                     //display action text "Find the key first, then you can leave"
-                    Debug.Log("find key");
+                    actionText.text = "Find the key first, then you can escape";
+                    actionText.gameObject.SetActive(true);
+                    StartCoroutine(SetFalse(actionText.gameObject));
+                    Debug.Log("display text");
                 }
             }
         }
@@ -33,5 +38,11 @@ public class LoadNextLevel : MonoBehaviour
     private void OnDrawGizmos()
     {
         //Gizmos.DrawWireSphere(transform.position, detectionRange);
+    }
+
+    IEnumerator SetFalse(GameObject obj)
+    {
+        yield return new WaitForSeconds(5f);
+        obj.SetActive(false);
     }
 }

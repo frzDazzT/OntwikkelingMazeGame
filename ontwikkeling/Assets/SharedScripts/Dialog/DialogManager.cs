@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour
 {
     DialogObject currentDialog;
+    GameObject player;
     public float rayDistance;
     public GameObject dialogCanvas;
     public Text dialogText;
@@ -15,6 +16,10 @@ public class DialogManager : MonoBehaviour
     public bool isDialogOpen;
     int dialogIndex;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Update()
     {
         RaycastHit hit;
@@ -22,7 +27,7 @@ public class DialogManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
-            if (hit.transform.gameObject.GetComponent<DialogHolder>() && !isDialogOpen)
+            if (hit.transform.gameObject.GetComponent<DialogHolder>() && !isDialogOpen && !player.GetComponent<Player>().isPaused)
             {
                 actionText.text = "Press [e] to interact";
                 actionText.gameObject.SetActive(true);

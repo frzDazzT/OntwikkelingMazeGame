@@ -6,7 +6,9 @@ public class MenuManager : MonoBehaviour
 {
     GameObject player;
     GameObject start;
-    
+    public GameObject settingsCanvas;
+    public GameObject pauseCanvas;
+
     public void PauseButtons(int index)
     {
         switch (index)
@@ -24,10 +26,10 @@ public class MenuManager : MonoBehaviour
                 //resart timer
                 break;
             case 2:
-                //button settings
+                //not using, handeld by animator.
                 break;
             case 3:
-                Application.Quit();
+                //go back to main menu
                 break;
         }
 
