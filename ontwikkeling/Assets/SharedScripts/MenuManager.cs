@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviour
                 GetComponent<ObjectiveManager>().ResetObjectives();
                 player.GetComponent<Player>().UnPause();
                 //resart timer
+                player.GetComponent<Timer>().ResetTimer();
                 break;
             case 2:
                 //not using, handeld by animator.

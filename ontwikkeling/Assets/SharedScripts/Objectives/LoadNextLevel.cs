@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoadNextLevel : MonoBehaviour
 {
     public float detectionRange;
     public GameObject manager;
     public Text actionText;
+    GameObject playerRef;
+    float currentTimer;
+    private void Start()
+    {
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Update()
     {
         Collider[] coll = Physics.OverlapSphere(transform.position, detectionRange);
@@ -23,6 +30,27 @@ public class LoadNextLevel : MonoBehaviour
                 {
                     //then load next level and add time to timer
                     Debug.Log("load next level");
+                    if (playerRef.gameObject.GetComponent<Pickup>().level1Key 
+                        && !playerRef.gameObject.GetComponent<Pickup>().level2Key 
+                        && !playerRef.gameObject.GetComponent<Pickup>().level3Key)
+                    {
+                        SceneManager.LoadScene(3);                        
+                    }
+
+                    if (playerRef.gameObject.GetComponent<Pickup>().level1Key
+                        && playerRef.gameObject.GetComponent<Pickup>().level2Key
+                        && !playerRef.gameObject.GetComponent<Pickup>().level3Key)
+                    {
+                        SceneManager.LoadScene(4);
+                    }
+
+                    if (playerRef.gameObject.GetComponent<Pickup>().level1Key
+                        && playerRef.gameObject.GetComponent<Pickup>().level2Key
+                        && playerRef.gameObject.GetComponent<Pickup>().level3Key)
+                    {
+                        //load ending screen
+                        Debug.Log("load ending screen");
+                    }
                 }
                 else
                 {

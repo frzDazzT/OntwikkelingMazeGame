@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
             //stop timer and stop time & show mouse
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            gameObject.GetComponent<Timer>().pause = true;
         }
         else
         {
@@ -90,6 +91,6 @@ public class Player : MonoBehaviour
         //continue timer and time & disable mouse
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
+        gameObject.GetComponent<Timer>().pause = false;
     }
 }

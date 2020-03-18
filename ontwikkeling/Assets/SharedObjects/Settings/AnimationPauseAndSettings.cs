@@ -12,14 +12,14 @@ public class AnimationPauseAndSettings : MonoBehaviour
     public void ExitFromSettingstoPause()
     {
         //trigger to go back
-        settingsAnimator.SetBool("Exit", true);
+        settingsAnimator.SetTrigger("Exit");
         StartCoroutine("SwitchCanvasFromSettingsToPause");
     }
 
     public void ExitFromPauseToSettings()
     {
         //trigger to go back
-        pauseAnimator.SetBool("Exit", true);
+        pauseAnimator.SetTrigger("Exit");
         StartCoroutine("SwitchCanvasFromPauseToSettings");
     }
     public IEnumerator SwitchCanvasFromSettingsToPause()
