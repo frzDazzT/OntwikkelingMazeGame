@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     GameObject player;
     GameObject start;
+    public GameObject keySpawningObj;
     public GameObject settingsCanvas;
     public GameObject pauseCanvas;
 
@@ -22,15 +24,43 @@ public class MenuManager : MonoBehaviour
                 GetComponent<DialogManager>().isDialogOpen = false;
                 GetComponent<DialogManager>().dialogCanvas.SetActive(false);
                 GetComponent<ObjectiveManager>().ResetObjectives();
+                keySpawningObj.GetComponent<KeySpawning>().SpawnKey();           
+                //level 1 key to false
+                if(SceneManager.GetActiveScene().name == "Level1")
+                {
+                    player.GetComponent<Pickup>().SetKeyBoolTo(1, false);
+                }
+                //level 2 key to false
+                if (SceneManager.GetActiveScene().name == "level 2")
+                {
+                    player.GetComponent<Pickup>().SetKeyBoolTo(2, false);
+                }
+                //level 3 key to false
+                if (SceneManager.GetActiveScene().name == "Level3Scene")
+                {
+                    player.GetComponent<Pickup>().SetKeyBoolTo(3, false);
+                }
                 player.GetComponent<Player>().UnPause();
-                //resart timer
-                player.GetComponent<Timer>().ResetTimer();
                 break;
             case 2:
-                //not using, handeld by animator.
-                break;
-            case 3:
-                //go back to main menu
+                //restart timer and go back to main menu
+                player.GetComponent<Timer>().ResetTimer();
+                //level 1 key to false
+                if (SceneManager.GetActiveScene().name == "Level1")
+                {
+                    player.GetComponent<Pickup>().SetKeyBoolTo(1, false);
+                }
+                //level 2 key to false
+                if (SceneManager.GetActiveScene().name == "level 2")
+                {
+                    player.GetComponent<Pickup>().SetKeyBoolTo(2, false);
+                }
+                //level 3 key to false
+                if (SceneManager.GetActiveScene().name == "Level3Scene")
+                {
+                    player.GetComponent<Pickup>().SetKeyBoolTo(3, false);
+                }
+                SceneManager.LoadScene(0);
                 break;
         }
 

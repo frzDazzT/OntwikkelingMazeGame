@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348479a8e4207a741a4d4c8810369357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!114 &8804828800537315036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +143,9 @@ MonoBehaviour:
   jumpForce: 3
   isPaused: 0
   pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
+  dialogCanvas: {fileID: 0}
+  dialogManager: {fileID: 0}
 --- !u!1 &5959050928666846545
 GameObject:
   m_ObjectHideFlags: 0

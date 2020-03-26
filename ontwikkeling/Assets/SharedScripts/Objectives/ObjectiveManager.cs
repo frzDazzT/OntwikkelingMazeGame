@@ -23,8 +23,14 @@ public class ObjectiveManager : MonoBehaviour
             objectivesDone.Add(objectiveBool);
         }
         //set UI text
-        objectiveText1.text = objective.objectiveDescription[0];
-        objectiveText2.text = objective.objectiveDescription[1];
+        if (objective.objectiveDescription.Count > 0)
+        {
+           objectiveText1.text = objective.objectiveDescription[0];
+        }
+        if (objective.objectiveDescription.Count > 1)
+        {
+           objectiveText2.text = objective.objectiveDescription[1];
+        }
     }
 
     public void CompletedObjective(ObjectiveType type)

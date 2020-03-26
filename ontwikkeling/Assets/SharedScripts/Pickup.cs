@@ -5,8 +5,8 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     GameObject player;
-    public GameObject manager;
-    public bool level1Key, level2Key, level3Key;
+    public GameObject manager; 
+    public static bool level1Key, level2Key, level3Key;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class Pickup : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Key>().fakeKey)
             {
-               // Debug.Log("time taken off");
+                // Debug.Log("time taken off");
                 collision.gameObject.SetActive(false);
             }
             else
@@ -41,6 +41,37 @@ public class Pickup : MonoBehaviour
                 }
                 collision.gameObject.SetActive(false);
             }
+        }
+    }
+
+    public bool ReturnIfKeyGotten(int whatKey)
+    {
+        switch (whatKey)
+        {
+            case 1:
+                return level1Key;
+            case 2:
+                return level2Key;
+            case 3:
+                return level3Key;
+            default:
+                return false;
+        }
+    }
+
+    public void SetKeyBoolTo(int whatKey, bool state)
+    {
+        switch (whatKey)
+        {
+            case 1:
+                level1Key = state;
+                break;
+            case 2:
+                level2Key = state;
+                break;
+            case 3:
+                level3Key = state;
+                break;
         }
     }
 }

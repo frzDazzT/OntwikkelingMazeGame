@@ -8,6 +8,10 @@ public class CamMove : MonoBehaviour
     float currentX;
     GameObject player;
 
+    public float moveSpeed = 4;
+    Vector3 moveDir;
+    public Vector3 camOffset;
+
     public float sens = 3;
     public float maxY = 45f, minY = -55f;
 
@@ -29,7 +33,11 @@ public class CamMove : MonoBehaviour
             Quaternion rot = Quaternion.Euler(currentX, currentY, 0);
             Quaternion rotPlayer = Quaternion.Euler(0, currentY, 0);
             Camera.main.transform.rotation = rot;
-            player.transform.localRotation = rotPlayer;
-        }     
+            player.transform.localRotation = rotPlayer;          
+
+        }
+
+        transform.position = player.transform.position;
+        transform.position += camOffset; 
     }
 }
