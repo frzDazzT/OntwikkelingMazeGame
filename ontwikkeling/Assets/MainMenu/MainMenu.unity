@@ -664,6 +664,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 4351549781246302498, guid: 2e5cba306aec8d045950925d5fc4bfcd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4351549781246302499, guid: 2e5cba306aec8d045950925d5fc4bfcd,
         type: 3}
       propertyPath: m_AnchorMin.y
